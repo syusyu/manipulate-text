@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+body {font-family: 'メイリオ'
+	'Hiragino Kaku Gothic Pro', sans-serif;}
+
+/* header */
+.header {
+	padding: 10px 10px 0 10px;
+	background-color: #8abc60;
+}
+
+.header h1 {
+	margin: 0;
+	font-size: 24px;
+	line-height: 1;
+}
+
+.header h1 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.header .logo {
+	margin: 0 10px 0 0;
+	border: none;
+	vertical-align: -15px;
+	height: 60px;
+}
+
+/* article */
+.entry {
+	padding: 0;
+}
+
+.entry img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 0 30px 0;
+	vertical-align: bottom;
+}
+
+.entry h1 {
+	margin: 0 0 20px 0;
+	line-height: 1.2;
+}
+
+.entry p {
+	margin: 0 0 20px 0;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.entry .added {
+	margin: 0 0 20px 0;
+}
+
+.entry h4 {
+	margin: 0 0 10px 0;
+	color: darkslategray;
+}
+
+.entry .button-area {
+	margin: 5px 0 5px 0;
+}
+
+/* article */
+
+
+/* submenu */
+.submenu {
+	padding: 20px;
+	background-color: #dfe3e8;
+}
+
+.submenu ul, .submenu ol {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 1.4;
+	list-style: none;
+}
+
+.submenu li a {
+	position: relative;
+	display: block;
+	padding: 10px 5px 10px 30px;
+	color: #000;
+	text-decoration: none;
+}
+
+.submenu li a:hover {
+	background-color: #fec;
+}
+
+.submenu li a.selected {
+	background-color: #fec;
+}
+
+.submenu li a:before {
+	position: absolute;
+	left: 5px;
+	top: 12px;
+	content: '\f061';
+	color: #8abc60;
+	font-family: 'FontAwesome';
+	font-size: 12px;
+	line-height: 1;
+}
+
+.submenu {
+	margin: 10;
+	padding: 0;
+	border: solid 1px #aaa;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+	box-shadow: none;
+	background-color: #fff;
+}
+
+.submenu > .panel-heading {
+	margin: 0;
+	padding: 10px;
+	border-bottom: solid 1px #aaa;
+	background-color: #fff;
+	font-size: 10px;
+}
+
+.submenu > .panel-body {
+	margin: 0;
+	padding: 10px;
+}
+
+/* menu */
+.menu {
+	background-color: #8abc60;
+	border: none;
+	border-top: solid 1px #fff;
+	border-radius: 0;
+}
+
+.menu li a {
+	color: #fff !important;
+}
+
+.menu li a:hover {
+	background-color: #084 !important;
+}
+
+.menu .navbar-collapse {
+	border-top-color: #fff;
+	border-top-style: dashed;
+}
+
+.menu .navbar-toggle {
+	border-color: #fff;
+}
+
+.menu .navbar-toggle-hover .bavbar-toggle-focus {
+	border-color: #084;
+}
+
+/* footer */
+.footer {
+	padding: 30px 20px 30px 20px;
+	background-image: url(../images/footer.png);
+	background-position: center top;
+	text-align: center;
+}
+
+.footer p {
+	margin: 0px 0px 3px 0px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.footer a {
+	color: #666;
+	text-decoration: none;
+}
