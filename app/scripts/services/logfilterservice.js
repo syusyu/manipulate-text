@@ -17,28 +17,20 @@ angular.module('manipulateTextApp')
         return text;
       }
 
+      //TODO think about empty lines
+
       var regexp = new RegExp(filterstr);
-      var newlines = [];
       var lines = text.split('\n');
-      var i;
-      for (i = 0; i < lines.length; i++) {
-        console.log('regexp=' + regexp.test(lines[i]) + ', contains=' + contains);
-        if (!(regexp.test(lines[i]) ^ contains)) {
-          console.log('did!')
-          newlines.push(lines[i]);
+      var result = '';
+      for (var i = 0; i < lines.length; i++) {
+        var matched = regexp.test(lines[i]);
+        if (matched && contains || !matched && !contains) {
+          result += lines[i] + '\n';
         }
       }
-      console.log(newlines);
-      var result = '';
-      for (i = 0; i < newlines.length; i++) {
-        result += newlines[i] + '\n';
-      }
       result = result.slice(0, -1);
-      console.log(result);
       return result;
     };
-
-
 
     return {
       getFilteredLog: function getFilteredLog(lines, regExp, contains) {

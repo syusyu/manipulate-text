@@ -10,8 +10,6 @@
  angular.module('manipulateTextApp')
    .controller('LogfilterCtrl', function ($scope, $log, LogfilterService) {
      $scope.submitLogFilter = function() {
-       var regExp = '';
-       var contains = true;
-       $scope.logText = LogfilterService.getFilteredLog($scope.logText, regExp, contains);
+       $scope.logText = LogfilterService.getFilteredLog($scope.logText, $scope.logRegexp, $scope.logContains);
      };
    });

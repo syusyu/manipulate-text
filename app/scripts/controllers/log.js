@@ -9,5 +9,8 @@
  */
 angular.module('manipulateTextApp')
   .controller('LogCtrl', function ($scope, $log, CategoryService) {
+    if (!$scope.logContains) {
+      $scope.logContains = true;
+    }
     CategoryService.setCategory('LOG');
   });

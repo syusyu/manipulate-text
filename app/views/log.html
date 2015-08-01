@@ -7,14 +7,14 @@
       <button class="btn btn-success btn-lg" id="btn-log-filter" type="button" ng-click="submitLogFilter()" type="submit">Filter</button>
       <button class="btn btn-success btn-xs" type="button">Clear text</button>
       <div class="form-group">
-        <input class="form-control" id="exampleInputName2" placeholder="RegExp" type="text">
+        <input class="form-control" id="log-regexp" placeholder="RegExp" type="text" ng-model="logRegexp">
       </div>
       <label class="radio-inline">
-        <input checked="checked" id="inlineRadio1" name="inlineRadioOptions" type="radio" value="option1">
+        <input id="log-contains" type="radio" ng-value="true" ng-model="logContains" ng-checked="logContains">
         contain
       </label>
       <label class="radio-inline">
-        <input id="inlineRadio2" name="inlineRadioOptions" type="radio" value="option2">
+        <input id="log-not-contains" type="radio" ng-value="false" ng-model="logContains" ng-checked="!logContains">
         not contain
       </label>
     </div>

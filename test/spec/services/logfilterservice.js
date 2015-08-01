@@ -12,20 +12,23 @@ describe('Service: LogfilterService', function () {
   }));
 
   var fixtures = [
-    // //0
-    // { text: '', regExp: '', contains: true, expected: '' },
-    // { text: '', regExp: '', contains: false, expected: '' },
-    // { text: 'aaabbbccc', regExp: '', contains: true, expected: 'aaabbbccc' },
-    // { text: 'aaabbbccc', regExp: '', contains: false, expected: 'aaabbbccc' },
-    // { text: 'aaabbbccc', regExp: 'aaa', contains: true, expected: 'aaabbbccc' },
-    // //5
-    // { text: 'aaabbbccc', regExp: 'aaa', contains: false, expected: '' },
-    // { text: 'aaabbbccc', regExp: 'aaabbbcccddd', contains: true, expected: '' },
+    //0
+    { text: '', regExp: '', contains: true, expected: '' },
+    { text: '', regExp: '', contains: false, expected: '' },
+    { text: 'aaabbbccc', regExp: '', contains: true, expected: 'aaabbbccc' },
+    { text: 'aaabbbccc', regExp: '', contains: false, expected: 'aaabbbccc' },
+    { text: 'aaabbbccc', regExp: 'aaa', contains: true, expected: 'aaabbbccc' },
+    //5
+    { text: 'aaabbbccc', regExp: 'aaa', contains: false, expected: '' },
+    { text: 'aaabbbccc', regExp: 'aaabbbcccddd', contains: true, expected: '' },
     { text: 'aaabbbccc', regExp: 'aaabbbcccddd', contains: false, expected: 'aaabbbccc' },
-    // { text: 'aaabbbccc', regExp: '^aaa', contains: true, expected: 'aaabbbccc' },
-    // { text: 'aaabbbccc', regExp: '^aaa', contains: false, expected: '' },
-    // //10
-    // { text: '', regExp: '', contains: true, expected: '' },
+    { text: 'aaabbbccc', regExp: '^aaa', contains: true, expected: 'aaabbbccc' },
+    { text: 'aaabbbccc', regExp: '^aaa', contains: false, expected: '' },
+    //10
+    { text: 'aaabbb\ncccddd\neeefff\n', regExp: 'bbb', contains: true, expected: 'aaabbb' },
+    { text: 'aaabbb\ncccddd\neeefff\n', regExp: 'bbb', contains: false, expected: 'cccddd\neeefff\n' },
+    { text: '', regExp: '', contains: true, expected: '' },
+    { text: '', regExp: '', contains: true, expected: '' },
   ];
   fixtures.forEach(function(fixture, idx) {
     it('filter test ' + idx, function () {
