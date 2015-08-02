@@ -26,6 +26,7 @@ describe('Service: HistoryService', function () {
       return;
     }
     it('Adding history' + idx, function () {
+      HistoryService.initHistory();
       fixture.init.forEach(function(val){
         HistoryService.addHistory('SQL', val);
       });

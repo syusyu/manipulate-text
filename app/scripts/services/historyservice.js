@@ -13,10 +13,13 @@ angular.module('manipulateTextApp')
     var histmap = {'SQL' : [], 'LOG' : [], 'Others' : []};
     for (var key in histmap) {
       var loghiststr = $cookieStore.get('hist_' + key);
-      histmap[key] = loghiststr ? loghiststr.split(',') : [];
+      histmap[key] = loghiststr ? loghiststr.split('@@@') : [];
     }
 
     return {
+      initHistory: function() {
+        histmap = {'SQL' : [], 'LOG' : [], 'Others' : []};
+      },
       addHistory: function addHistory(category, text) {
         if (!text) {
           return;
@@ -32,7 +35,7 @@ angular.module('manipulateTextApp')
           }
         }
         history.push(text.toString());
-        $cookieStore.put('hist_' + category, history.toString());
+        $cookieStore.put('hist_' + category, history.join('@@@'));
 
         $rootScope.$broadcast('change_history', '');
       },

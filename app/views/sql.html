@@ -1,18 +1,22 @@
 <h4>SQL</h4>
 <div class="added">
-  <textarea class="form-control" rows="20"></textarea>
+  <form ng-controller="SqlCtrl">
+    <textarea class="form-control" ng-model="sqlText" rows="20"></textarea>
 
-  <div class="button-area">
-    <button type="button" class="btn btn-success btn-lg">Where in</button>
-    <button type="button" class="btn btn-success btn-xs">Clear text</button>
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="checked"> auto
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> quotation
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> not quotation
-    </label>
-  </div>
+    <div class="button-area form-inline">
+      <button class="btn btn-success btn-lg" id="btn-wherein" type="button" ng-click="submitWhereIn()" type="submit">Where in</button>
+      <label class="radio-inline">
+        <input id="quotation-auto" type="radio" ng-value="0" ng-model="quotation" ng-checked="quotation===0">
+        auto
+      </label>
+      <label class="radio-inline">
+        <input id="quotation-does" type="radio" ng-value="1" ng-model="quotation" ng-checked="quotation===1">
+        quotation
+      </label>
+      <label class="radio-inline">
+        <input id="quotation-not" type="radio" ng-value="2" ng-model="quotation" ng-checked="quotation===2">
+        quotationnot
+      </label>
+    </div>
+  </form>
 </div>

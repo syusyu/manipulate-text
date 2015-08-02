@@ -33,6 +33,7 @@ angular.module('manipulateTextApp')
       //TODO think about empty lines
 
       var regexp = new RegExp(filterstr);
+      text = text.replace(/\r\n|\r/g, "\n");
       var lines = text.split('\n');
       var result = '';
       for (var i = 0; i < lines.length; i++) {
