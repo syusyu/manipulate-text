@@ -1,8 +1,11 @@
 <h4>Others</h4>
 <div class="added">
-  <textarea class="form-control" rows="20"></textarea>
-  <div class="button-area">
-    <button type="button" class="btn btn-success btn-lg">Sort</button>
-    <button type="button" class="btn btn-success btn-xs">Clear text</button>
-  </div>
+  <form ng-controller="OthersCtrl">
+    <textarea class="form-control" ng-model="othersText" rows="20"></textarea>
+
+    <div class="button-area form-inline">
+      <button class="btn btn-success btn-lg" id="btn-lsort" type="button" ng-click="submitSort()" type="submit">Sort</button>
+      <button class="btn btn-success btn-lg" id="btn-lsort" type="button" ng-click="submitSort('reverse')" type="submit">Reverse</button>
+    </div>
+  </form>
 </div>
