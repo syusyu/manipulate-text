@@ -4,18 +4,19 @@
     <textarea class="form-control" ng-model="logText" rows="20"></textarea>
 
     <div class="button-area form-inline">
-      <button class="btn btn-success btn-lg" id="btn-log-filter" type="button" ng-click="submitLogFilter()" type="submit">Filter</button>
+      <button class="btn btn-success btn-lg" id="btn-log-filter" ng-click="submitLogFilter()" ng-disabled="!logText || !logRegexp" type="button" type="submit">Filter</button>
       <div class="form-group">
-        <input class="form-control" id="log-regexp" placeholder="filter" type="text" ng-model="logRegexp">
+        <input class="form-control" id="log-regexp" ng-model="logRegexp" placeholder="filter" type="text">
       </div>
       <label class="radio-inline">
-        <input id="log-contains" type="radio" ng-value="true" ng-model="logContains" ng-checked="logContains !== false">
+        <input id="log-contains" ng-checked="logContains !== false" ng-model="logContains" ng-value="true" type="radio">
         contain
       </label>
       <label class="radio-inline">
-        <input id="log-not-contains" type="radio" ng-value="false" ng-model="logContains" ng-checked="logContains === false">
+        <input id="log-not-contains" ng-checked="logContains === false" ng-model="logContains" ng-value="false" type="radio">
         not contain
       </label>
+      <button class="btn btn-success btn-xs" id="btn-clear-logtext" ng-click="clearText()" ng-disabled="!logText" type="button" type="submit">Clear</button>
     </div>
   </form>
 </div>

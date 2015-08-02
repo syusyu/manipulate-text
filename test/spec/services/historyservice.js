@@ -20,7 +20,8 @@ describe('Service: HistoryService', function () {
     {init: [], add: ['3'], expected: ['3']},
     //5
     {},
-  ]
+  ];
+
   fixtures.forEach(function(fixture, idx) {
     if (!fixture.init) {
       return;

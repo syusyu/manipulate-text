@@ -29,4 +29,7 @@ angular.module('manipulateTextApp')
     $scope.clearText = function() {
       SharedDataService.setText(CategoryService.getSelectedCategory(), '');
     };
+    $scope.existsHistory = function() {
+      return $scope.history && $scope.history.length > 0;
+    };
   });

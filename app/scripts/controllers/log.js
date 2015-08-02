@@ -8,7 +8,7 @@
  * Controller of the manipulateTextApp
  */
 angular.module('manipulateTextApp')
-  .controller('LogCtrl', function ($scope, $log, CategoryService, LogfilterService, HistoryService, SharedDataService) {
+  .controller('LogCtrl', function($scope, $log, CategoryService, LogfilterService, HistoryService, SharedDataService) {
     CategoryService.setCategory('LOG');
     $scope.logText = SharedDataService.getText(CategoryService.getSelectedCategory());
     $scope.logRegexp = SharedDataService.getFilterRegexp();
@@ -20,6 +20,11 @@ angular.module('manipulateTextApp')
       SharedDataService.setFilterRegexp($scope.logRegexp);
       SharedDataService.setFilterContains($scope.logContains);
     };
+
+    $scope.clearText = function() {
+      $scope.logText = '';
+    };
+
     $scope.$on('change_text', function(event, data) {
       $scope.logText = SharedDataService.getText('LOG');
     });

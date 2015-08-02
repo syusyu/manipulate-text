@@ -40,7 +40,7 @@ angular.module('manipulateTextApp')
         return sqlQuotation;
       },
       setSqlQuotation: function(val) {
-        setSqlQuotation = val;
+        sqlQuotation = val;
       },
     };
   });

@@ -8,7 +8,7 @@
  * Controller of the manipulateTextApp
  */
 angular.module('manipulateTextApp')
-  .controller('SqlCtrl', function ($scope, $log, CategoryService, SqlService, HistoryService, SharedDataService) {
+  .controller('SqlCtrl', function($scope, $log, CategoryService, SqlService, HistoryService, SharedDataService) {
     CategoryService.setCategory('SQL');
     $scope.sqlText = SharedDataService.getText(CategoryService.getSelectedCategory());
     $scope.quotation = SharedDataService.getSqlQuotation();
@@ -18,6 +18,11 @@ angular.module('manipulateTextApp')
       SharedDataService.setText('SQL', SqlService.getConvertedText($scope.sqlText, $scope.quotation));
       SharedDataService.setSqlQuotation($scope.quotation);
     };
+
+    $scope.clearText = function() {
+      $scope.sqlText = '';
+    };
+
     $scope.$on('change_text', function(event, data) {
       $scope.sqlText = SharedDataService.getText('SQL');
     });

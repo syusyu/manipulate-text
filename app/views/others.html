@@ -4,8 +4,9 @@
     <textarea class="form-control" ng-model="othersText" rows="20"></textarea>
 
     <div class="button-area form-inline">
-      <button class="btn btn-success btn-lg" id="btn-lsort" type="button" ng-click="submitSort()" type="submit">Sort</button>
-      <button class="btn btn-success btn-lg" id="btn-lsort" type="button" ng-click="submitSort('reverse')" type="submit">Reverse</button>
+      <button class="btn btn-success btn-lg" id="btn-lsort" ng-click="submitSort()" ng-disabled="!othersText" type="button" type="submit">Sort</button>
+      <button class="btn btn-success btn-lg" id="btn-lsort" ng-click="submitSort('reverse')" ng-disabled="!othersText" type="button" type="submit">Reverse</button>
+      <button class="btn btn-success btn-xs" id="btn-clear-otherstext" ng-click="clearText()" ng-disabled="!othersText" type="button" type="submit">Clear</button>
     </div>
   </form>
 </div>

@@ -15,7 +15,6 @@ angular.module('manipulateTextApp')
       var loghiststr = $cookieStore.get('hist_' + key);
       histmap[key] = loghiststr ? loghiststr.toString().split('@@@') : [];
     }
-
     return {
       initHistory: function() {
         histmap = {'SQL' : [], 'LOG' : [], 'Others' : []};
@@ -23,7 +22,7 @@ angular.module('manipulateTextApp')
 
       clearHistory: function(category) {
         histmap[category] = [];
-        $cookieStore.put('hist_' + category, []);
+        $cookieStore.remove('hist_' + category);
         $rootScope.$broadcast('change_history', '');
       },
 
