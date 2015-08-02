@@ -8,9 +8,9 @@
  * Controller of the manipulateTextApp
  */
 angular.module('manipulateTextApp')
-  .controller('LogCtrl', function ($scope, $log, CategoryService) {
-    if (!$scope.logContains) {
-      $scope.logContains = true;
-    }
+  .controller('LogCtrl', function ($scope, $log, CategoryService, LogfilterService) {
+    $scope.logText = LogfilterService.getText();
+    $scope.logRegexp = LogfilterService.getFilterstr();
+    $scope.logContains = LogfilterService.getContains();
     CategoryService.setCategory('LOG');
   });

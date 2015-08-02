@@ -9,7 +9,20 @@
  */
 angular.module('manipulateTextApp')
   .service('LogfilterService', function() {
+    var storedText = '';
+    var storedFilterstr = '';
+    var storedContains = true;
+
+    var s = function storeParams(text, filterstr, contains) {
+      storedText = text;
+      storedFilterstr = filterstr;
+      storedContains = contains;
+    };
+
     var f = function logfilter(text, filterstr, contains) {
+
+      s(text, filterstr, contains);
+
       if (!text) {
         return '';
       }
@@ -33,8 +46,20 @@ angular.module('manipulateTextApp')
     };
 
     return {
-      getFilteredLog: function getFilteredLog(lines, regExp, contains) {
-        return f(lines, regExp, contains);
+      getText: function getText() {
+        return storedText;
+      },
+      getFilterstr: function getFilterstr() {
+        return storedFilterstr;
+      },
+      getContains: function getContains() {
+        return storedContains;
+      },
+      storeParams: function storeParams(text, filterstr, contains) {
+        s(text, filterstr, contains);
+      },
+      getFilteredLog: function getFilteredLog(text, filterstr, contains) {
+        return f(text, filterstr, contains);
       }
     };
 

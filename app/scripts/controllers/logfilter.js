@@ -8,8 +8,12 @@
  * Controller of the manipulateTextApp
  */
  angular.module('manipulateTextApp')
-   .controller('LogfilterCtrl', function ($scope, $log, LogfilterService) {
+   .controller('LogfilterCtrl', function ($scope, $log, LogfilterService, HistoryService, TextAreaService) {
      $scope.submitLogFilter = function() {
-       $scope.logText = LogfilterService.getFilteredLog($scope.logText, $scope.logRegexp, $scope.logContains);
+       HistoryService.addHistory('LOG', $scope.logText);
+       TextAreaService.setText('LOG', LogfilterService.getFilteredLog($scope.logText, $scope.logRegexp, $scope.logContains));
      };
+     $scope.$on('change_text', function(event, data) {
+       $scope.logText = TextAreaService.getText('LOG');
+     });
    });

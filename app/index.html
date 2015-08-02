@@ -43,12 +43,12 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-2" ng-controller="CategoryCtrl">
           <div class="submenu panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">CATEGORIES</h3>
             </div>
-            <div class="panel-body" ng-controller="CategoryCtrl">
+            <div class="panel-body">
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="#/sql" ng-class="{selected: isCategorySelected('SQL')}" id="category-sql">SQL</a></li>
                 <li><a href="#/log" ng-class="{selected: isCategorySelected('LOG')}" id="category-log">LOG</a></li>
@@ -56,6 +56,17 @@
               </ul>
             </div>
           </div>
+
+          <div class="panel-heading">
+            <h3 class="panel-title">Text History</h3>
+          </div>
+          <div class="submenu panel panel-default list-group">
+            <ul class="nav nav-pills nav-stacked">
+              <button type="button" class="list-group-item" ng-repeat="hist in history" ng-click="restoreTextFromHistory(hist)">
+                {{hist.substr(0, 30)}}</a>
+            </ul>
+          </div>
+
         </div>
         <!-- col -->
 
@@ -108,6 +119,8 @@
         <script src="scripts/controllers/logfilter.js"></script>
         <script src="scripts/services/categoryservice.js"></script>
         <script src="scripts/services/logfilterservice.js"></script>
+        <script src="scripts/services/historyservice.js"></script>
+        <script src="scripts/services/textareaservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>
