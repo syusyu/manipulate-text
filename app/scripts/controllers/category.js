@@ -21,4 +21,10 @@ angular.module('manipulateTextApp')
     $scope.restoreTextFromHistory = function(text) {
       TextAreaService.setText(CategoryService.getSelectedCategory(), text);
     };
+    $scope.clearHistory = function() {
+      HistoryService.clearHistory(CategoryService.getSelectedCategory());
+    };
+    $scope.clearText = function() {
+      TextAreaService.setText(CategoryService.getSelectedCategory(), '');
+    }
   });

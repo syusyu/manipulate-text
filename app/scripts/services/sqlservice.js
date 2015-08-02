@@ -47,8 +47,8 @@ angular.module('manipulateTextApp')
         for (var i = 0; i < lines.length; i++) {
           if (lines[i].replace(/\s/g, "")) {
             result += putsQuotation ? "'" : "";
-            result += "'" + lines[i] + "', ";
-            result += putsQuotation ? "'" : "";
+            result += lines[i];
+            result += putsQuotation ? "', " : ", ";
           }
         }
         result = 'where   in (' + result.slice(0, -2) + ')';

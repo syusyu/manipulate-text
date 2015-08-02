@@ -42,8 +42,8 @@
     <div style="margin-bottom: 20px;"></div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-sm-2" ng-controller="CategoryCtrl">
+      <div class="row" ng-controller="CategoryCtrl">
+        <div class="col-sm-2">
           <div class="submenu panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">CATEGORIES</h3>
@@ -59,6 +59,8 @@
 
           <div class="panel-heading">
             <h3 class="panel-title">Text History</h3>
+            <button class="btn btn-success btn-xs" id="btn-clear-history" type="button" ng-click="clearHistory()" type="submit">Clear</button>
+
           </div>
           <div class="submenu panel panel-default list-group">
             <ul class="nav nav-pills nav-stacked">
@@ -73,6 +75,7 @@
         <div class="col-sm-10">
           <div class="entry">
             <div ng-view></div>
+            <button class="btn btn-success btn-xs" id="btn-clear-text" type="button" ng-click="clearText()" type="submit">Clear</button>
           </div>
         </div>
 
