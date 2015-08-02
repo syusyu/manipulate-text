@@ -29,11 +29,11 @@ angular.module('manipulateTextApp')
       }
       result = result.replace(/^\s*\n/g, "");
       return result;
-    }
+    };
 
     return {
       getSortedText: function(text, order) {
         return f(text, order);
       }
-    }
+    };
   });

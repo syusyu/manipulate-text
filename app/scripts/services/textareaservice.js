@@ -21,5 +21,5 @@ angular.module('manipulateTextApp')
         texts[category] = text;
         $rootScope.$broadcast('change_text', category);
       }
-    }
+    };
   });

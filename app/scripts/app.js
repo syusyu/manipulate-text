@@ -34,7 +34,12 @@ angular
         controller: 'OthersCtrl',
         controllerAs: 'others'
       })
+      .when('/', {
+        templateUrl: 'views/routing.html',
+        controller: 'RoutingCtrl',
+        controllerAs: 'routing'
+      })
       .otherwise({
-        redirectTo: '/sql'
+        redirectTo: '/'
       });
   });

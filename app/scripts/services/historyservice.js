@@ -8,9 +8,14 @@
  * Service in the manipulateTextApp.
  */
 angular.module('manipulateTextApp')
-  .service('HistoryService', function ($rootScope) {
+  .service('HistoryService', function ($rootScope, $cookieStore) {
     var MAX_HISTORY_SIZE = 10;
     var histmap = {'SQL' : [], 'LOG' : [], 'Others' : []};
+    for (var key in histmap) {
+      var loghiststr = $cookieStore.get('hist_' + key);
+      histmap[key] = loghiststr ? loghiststr.split(',') : [];
+    }
+
     return {
       addHistory: function addHistory(category, text) {
         if (!text) {
@@ -19,7 +24,7 @@ angular.module('manipulateTextApp')
         var history = [];
         history = histmap[category];
         var idx = histmap[category].indexOf(text);
-        if (idx != -1) {
+        if (idx !== -1) {
           history.splice(idx, 1);
         } else {
           if (history.length > MAX_HISTORY_SIZE) {
@@ -27,8 +32,11 @@ angular.module('manipulateTextApp')
           }
         }
         history.push(text.toString());
+        $cookieStore.put('hist_' + category, history.toString());
+
         $rootScope.$broadcast('change_history', '');
       },
+
       getHistory: function getHistory(category) {
         return histmap[category];
       }
