@@ -8,14 +8,15 @@
  * Controller of the manipulateTextApp
  */
 angular.module('manipulateTextApp')
-  .controller('OthersCtrl', function ($scope, CategoryService, SortService, HistoryService, TextAreaService) {
+  .controller('OthersCtrl', function ($rootScope, $scope, CategoryService, SortService, HistoryService, SharedDataService) {
     CategoryService.setCategory('Others');
+    $scope.othersText = SharedDataService.getText(CategoryService.getSelectedCategory());
 
     $scope.submitSort = function(order) {
       HistoryService.addHistory('Others', $scope.othersText);
-      TextAreaService.setText('Others', SortService.getSortedText($scope.othersText, order));
+      SharedDataService.setText('Others', SortService.getSortedText($scope.othersText, order));
     };
     $scope.$on('change_text', function(event, data) {
-      $scope.othersText = TextAreaService.getText('Others');
+      $scope.othersText = SharedDataService.getText('Others');
     });
   });

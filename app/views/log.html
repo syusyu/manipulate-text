@@ -9,11 +9,11 @@
         <input class="form-control" id="log-regexp" placeholder="filter" type="text" ng-model="logRegexp">
       </div>
       <label class="radio-inline">
-        <input id="log-contains" type="radio" ng-value="true" ng-model="logContains" ng-checked="logContains">
+        <input id="log-contains" type="radio" ng-value="true" ng-model="logContains" ng-checked="logContains !== false">
         contain
       </label>
       <label class="radio-inline">
-        <input id="log-not-contains" type="radio" ng-value="false" ng-model="logContains" ng-checked="!logContains">
+        <input id="log-not-contains" type="radio" ng-value="false" ng-model="logContains" ng-checked="logContains === false">
         not contain
       </label>
     </div>

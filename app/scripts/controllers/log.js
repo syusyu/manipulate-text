@@ -8,17 +8,19 @@
  * Controller of the manipulateTextApp
  */
 angular.module('manipulateTextApp')
-  .controller('LogCtrl', function ($scope, $log, CategoryService, LogfilterService, HistoryService, TextAreaService) {
-    $scope.logText = LogfilterService.getText();
-    $scope.logRegexp = LogfilterService.getFilterstr();
-    $scope.logContains = LogfilterService.getContains();
+  .controller('LogCtrl', function ($scope, $log, CategoryService, LogfilterService, HistoryService, SharedDataService) {
     CategoryService.setCategory('LOG');
+    $scope.logText = SharedDataService.getText(CategoryService.getSelectedCategory());
+    $scope.logRegexp = SharedDataService.getFilterRegexp();
+    $scope.logContains = SharedDataService.getFilterContains();
 
     $scope.submitLogFilter = function() {
       HistoryService.addHistory('LOG', $scope.logText);
-      TextAreaService.setText('LOG', LogfilterService.getFilteredLog($scope.logText, $scope.logRegexp, $scope.logContains));
+      SharedDataService.setText('LOG', LogfilterService.getFilteredLog($scope.logText, $scope.logRegexp, $scope.logContains));
+      SharedDataService.setFilterRegexp($scope.logRegexp);
+      SharedDataService.setFilterContains($scope.logContains);
     };
     $scope.$on('change_text', function(event, data) {
-      $scope.logText = TextAreaService.getText('LOG');
+      $scope.logText = SharedDataService.getText('LOG');
     });
   });

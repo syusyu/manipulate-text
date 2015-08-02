@@ -9,6 +9,7 @@
  */
 angular.module('manipulateTextApp')
   .service('CategoryService', function($rootScope, $cookieStore) {
+
     var selectedCategory = $cookieStore.get('category');
     if (!selectedCategory) {
       selectedCategory = 'SQL';

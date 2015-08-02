@@ -8,23 +8,25 @@
  * Controller of the manipulateTextApp
  */
 angular.module('manipulateTextApp')
-  .controller('CategoryCtrl', function($scope, $log, CategoryService, HistoryService, TextAreaService) {
+  .controller('CategoryCtrl', function($scope, $log, CategoryService, HistoryService, SharedDataService) {
+
     $scope.$on('change_category', function(event, data) {
       $scope.history = HistoryService.getHistory(CategoryService.getSelectedCategory());
     });
     $scope.$on('change_history', function(event, data) {
       $scope.history = HistoryService.getHistory(CategoryService.getSelectedCategory());
     });
+
     $scope.isCategorySelected = function(category) {
       return CategoryService.isCategorySelected(category);
     };
     $scope.restoreTextFromHistory = function(text) {
-      TextAreaService.setText(CategoryService.getSelectedCategory(), text);
+      SharedDataService.setText(CategoryService.getSelectedCategory(), text);
     };
     $scope.clearHistory = function() {
       HistoryService.clearHistory(CategoryService.getSelectedCategory());
     };
     $scope.clearText = function() {
-      TextAreaService.setText(CategoryService.getSelectedCategory(), '');
-    }
+      SharedDataService.setText(CategoryService.getSelectedCategory(), '');
+    };
   });

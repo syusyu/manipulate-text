@@ -6,7 +6,7 @@
     <div class="button-area form-inline">
       <button class="btn btn-success btn-lg" id="btn-wherein" type="button" ng-click="submitWhereIn()" type="submit">Where in</button>
       <label class="radio-inline">
-        <input id="quotation-auto" type="radio" ng-value="0" ng-model="quotation" ng-checked="quotation===0">
+        <input id="quotation-auto" type="radio" ng-value="0" ng-model="quotation" ng-checked="quotation!==1 && quotation !== 2">
         auto
       </label>
       <label class="radio-inline">

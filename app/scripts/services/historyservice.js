@@ -28,7 +28,7 @@ angular.module('manipulateTextApp')
       },
 
       addHistory: function addHistory(category, text) {
-        if (!text || !text.replace(/\s/g, "")) {
+        if (!text || !text.toString().replace(/\s/g, "")) {
           return;
         }
         var history = [];
