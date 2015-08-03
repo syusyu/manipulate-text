@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
   <!-- endbower -->
   <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <!-- <link rel="stylesheet" href="styles/main.css"> -->
+  <!-- build:css(.tmp) styles/style.css -->
+  <!-- <link rel="stylesheet" href="styles/style.css"> -->
   <!-- endbuild -->
   <link href="styles/style.css" rel="stylesheet">
 </head>
@@ -60,12 +60,9 @@
         </div>
 
         <div ng-show="existsHistory()">
-          <div class="panel-heading">
-            <h3 class="panel-title">Text History</h3>
-          </div>
-          <div class=" panel panel-default list-group">
+          <div class="list-group">
             <ul class="nav nav-pills nav-stacked">
-              <button type="button" class="list-group-item" ng-repeat="hist in history" ng-click="restoreTextFromHistory(hist)">
+              <button type="button" class="text-history-button list-group-item " ng-repeat="hist in history" ng-click="restoreTextFromHistory(hist)">
                 {{hist.substr(0, 30)}}</a>
             </ul>
           </div>

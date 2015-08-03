@@ -1,4 +1,3 @@
-<h4>LOG</h4>
 <div class="added">
   <form ng-controller="LogCtrl">
     <textarea class="form-control" ng-model="logText" rows="20"></textarea>
@@ -8,14 +7,16 @@
       <div class="form-group">
         <input class="form-control" id="log-regexp" ng-model="logRegexp" placeholder="filter" type="text">
       </div>
-      <label class="radio-inline">
-        <input id="log-contains" ng-checked="logContains !== false" ng-model="logContains" ng-value="true" type="radio">
-        contain
-      </label>
-      <label class="radio-inline">
-        <input id="log-not-contains" ng-checked="logContains === false" ng-model="logContains" ng-value="false" type="radio">
-        not contain
-      </label>
+      <span class="text-options">
+        <label class="radio-inline">
+          <input id="log-contains" ng-checked="logContains !== false" ng-model="logContains" ng-value="true" type="radio">
+          contain
+        </label>
+        <label class="radio-inline">
+          <input id="log-not-contains" ng-checked="logContains === false" ng-model="logContains" ng-value="false" type="radio">
+          not contain
+        </label>
+      </span>
       <button class="btn btn-success btn-xs" id="btn-clear-logtext" ng-click="clearText()" ng-disabled="!logText" type="button" type="submit">Clear</button>
     </div>
   </form>

@@ -160,6 +160,19 @@ body {font-family: 'メイリオ'
 	border-color: #084;
 }
 
+/* text history */
+.text-history-button {
+	margin-top: 5px;
+	word-wrap: break-word;
+	background-color: #E0F8E6;
+}
+
+/* radio-button-option */
+.text-options {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 /* footer */
 .footer {
 	padding: 30px 20px 30px 20px;

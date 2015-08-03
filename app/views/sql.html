@@ -1,22 +1,23 @@
-<h4>SQL</h4>
 <div class="added">
   <form ng-controller="SqlCtrl">
     <textarea class="form-control" ng-model="sqlText" rows="20"></textarea>
 
     <div class="button-area form-inline">
       <button class="btn btn-success btn-lg" id="btn-wherein" ng-click="submitWhereIn()" ng-disabled="!sqlText" type="button" type="submit">Where in</button>
-      <label class="radio-inline">
-        <input id="quotation-auto" ng-checked="quotation!==1 && quotation !== 2" ng-model="quotation" ng-value="0" type="radio">
-        auto
-      </label>
-      <label class="radio-inline">
-        <input id="quotation-does" ng-checked="quotation===1" ng-model="quotation" ng-value="1" type="radio">
-        quotation
-      </label>
-      <label class="radio-inline">
-        <input id="quotation-not" ng-checked="quotation===2" ng-model="quotation" ng-value="2" type="radio">
-        quotationnot
-      </label>
+      <span class="text-options">
+        <label class="radio-inline">
+          <input id="quotation-auto" ng-checked="quotation!==1 && quotation !== 2" ng-model="quotation" ng-value="0" type="radio">
+          auto
+        </label>
+        <label class="radio-inline">
+          <input id="quotation-does" ng-checked="quotation===1" ng-model="quotation" ng-value="1" type="radio">
+          quotation
+        </label>
+        <label class="radio-inline">
+          <input id="quotation-not" ng-checked="quotation===2" ng-model="quotation" ng-value="2" type="radio">
+          quotationnot
+        </label>
+      </span>
       <button class="btn btn-success btn-xs" id="btn-clear-sqltext" ng-click="clearText()" ng-disabled="!sqlText" type="button" type="submit">Clear</button>
     </div>
   </form>
